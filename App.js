@@ -3,7 +3,13 @@ import { createSwitchNavigator } from 'react-navigation';
 import { createAppContainer } from 'react-navigation';
 import {useNavigation} from '@react-navigation/native';
 import {
+  TextInput,
   StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Alert,
+  Image,
 } from 'react-native';
 //Navigation import
 import {notificationManager} from './components/NotificationHandler';
@@ -22,13 +28,15 @@ const notificador = notificationManager;
   
     componentDidMount() {
       notificador.configurar()
+      // notificador.criarCanal()
+      // notificador.agendarNotificacao()
     }
   
     disparar = () => {
       notificador.showNotification(
         1,
-        "Seja bem-vindo!",
-        "Cheque nosso site!",
+        "Seja Bem Vindo!",
+        "Veja nosso Github para Mais!",
         {}, // data
         {} // options
       )
